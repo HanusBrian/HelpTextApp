@@ -4,8 +4,9 @@ import { HelpTextService } from './helptext.service';
 
 @Component({
     selector: "helptext",
-    templateUrl: "helptext.component.html",
-    styleUrls: ["helptext.component.css"]
+    templateUrl: "C:/Users/hanusbe/NQDaemon/HelpTextApp/src/app/helptext.component.html",
+    styleUrls: ["C:/Users/hanusbe/NQDaemon/HelpTextApp/src/app/helptext.component.css"],
+    providers: [HelpTextService]
 })
 
 export class HelpTextComponent {

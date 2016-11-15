@@ -14,7 +14,7 @@ module.exports = {
       '@angular/router',
       '@angular/http'
     ],
-	'app': 'E:/NQDaemon/HelpTextApp/src/main'
+	'app': './src/main'
   },
  
   output: {

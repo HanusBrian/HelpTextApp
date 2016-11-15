@@ -5,10 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HelpTextComponent } from './helptext.component';
+import { FileDropComponent } from './filedrop.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelpTextComponent,
+    FileDropComponent
   ],
   imports: [
     BrowserModule,
