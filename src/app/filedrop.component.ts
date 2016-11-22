@@ -12,9 +12,6 @@ import { Component } from '@angular/core';
         <strong>Drop Your Helptext Excel Here</strong>
       </p>
     </div>
-    <div style="margin-top:10px;padding:10px;color:black;background-color:cyan;display:inline-block;border-radius:3px;border: 1px solid grey;"
-        (click)="handleDownload()">
-        Download Template</div>
     `
 })
 
@@ -28,9 +25,5 @@ export class FileDropComponent {
             console.log(files[key]);
         });
         return false;
-    }
-
-    handleDownload(){
-        console.log("You pressed the download button!!!");
     }
 }

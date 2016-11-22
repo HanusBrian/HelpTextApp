@@ -1,4 +1,15 @@
-<h1>
-  {{title}}
-</h1>
+<div style="margin: 10px">
+	<h1 style="display:inline">
+		{{title}}
+	</h1>
+	<div style="padding:10px;
+      color:black;
+      background-color:cyan;
+      display:inline;
+      border-radius:3px;
+      border: 1px solid grey;
+      float:right" 
+      onclick="ipcRenderer.send('downloadTemplate')">
+		Download Template</div>
+</div>
 <file-drop></file-drop>

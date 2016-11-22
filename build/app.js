@@ -24764,10 +24764,13 @@ webpackJsonp([1,2],[
 	    function AppComponent() {
 	        this.title = 'HelpText App!!!';
 	    }
+	    AppComponent.prototype.handleDownload = function () {
+	        console.log("You pressed the download button!!!");
+	    };
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'app-root',
-	            templateUrl: 'C:/Users/hanusbe/NQDaemon/HelpTextApp/src/app/app.component.html',
+	            templateUrl: './app/app.component.html',
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);
@@ -29533,8 +29536,8 @@ webpackJsonp([1,2],[
 	    HelpTextComponent = __decorate([
 	        core_1.Component({
 	            selector: "helptext",
-	            templateUrl: "C:/Users/hanusbe/NQDaemon/HelpTextApp/src/app/helptext.component.html",
-	            styleUrls: ["C:/Users/hanusbe/NQDaemon/HelpTextApp/src/app/helptext.component.css"],
+	            templateUrl: "./app/helptext.component.html",
+	            styleUrls: ["./app/helptext.component.css"],
 	            providers: [helptext_service_1.HelpTextService]
 	        }), 
 	        __metadata('design:paramtypes', [helptext_service_1.HelpTextService])
@@ -30661,13 +30664,10 @@ webpackJsonp([1,2],[
 	        });
 	        return false;
 	    };
-	    FileDropComponent.prototype.handleDownload = function () {
-	        console.log("You pressed the download button!!!");
-	    };
 	    FileDropComponent = __decorate([
 	        core_1.Component({
 	            selector: "file-drop",
-	            template: "\n    <div\n      (dragover)=\"false\"\n      (dragend)=\"false\"\n      (drop)=\"handleDrop($event)\"\n      style=\"height: 300px; border: 5px dotted #ccc;\">\n      <p style=\"margin: 10px; text-align: center\">\n        <strong>Drop Your Helptext Excel Here</strong>\n      </p>\n    </div>\n    <div style=\"margin-top:10px;padding:10px;color:black;background-color:cyan;display:inline-block;border-radius:3px;border: 1px solid grey;\"\n        (click)=\"handleDownload()\">\n        Download Template</div>\n    "
+	            template: "\n    <div\n      (dragover)=\"false\"\n      (dragend)=\"false\"\n      (drop)=\"handleDrop($event)\"\n      style=\"height: 300px; border: 5px dotted #ccc;\">\n      <p style=\"margin: 10px; text-align: center\">\n        <strong>Drop Your Helptext Excel Here</strong>\n      </p>\n    </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], FileDropComponent);

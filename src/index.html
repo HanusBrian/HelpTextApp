@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Testapp</title>
-  <base href="/">
-
+  <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
@@ -12,7 +11,12 @@
   <app-root>Loading...</app-root>
 </body>
 <!--<script src="E:/NQDaemon/testapp/src/polyfills.ts"></script>-->
-<script src="C:/Users/hanusbe/NQDaemon/HelpTextApp/build/common.js"></script>
-<script src="C:/Users/hanusbe/NQDaemon/HelpTextApp/build/angular2.js"></script>
-<script src="C:/Users/hanusbe/NQDaemon/HelpTextApp/build/app.js"></script>
+<script src="../build/common.js"></script>
+<script src="../build/angular2.js"></script>
+<script src="../build/app.js"></script>
+<script type="text/javascript">
+  var electron = require("electron");
+  var shell = electron.shell;
+  var ipcRenderer = electron.ipcRenderer;
+</script>
 </html>
