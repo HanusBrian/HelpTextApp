@@ -24763,14 +24763,14 @@ webpackJsonp([1,2],[
 	var AppComponent = (function () {
 	    function AppComponent() {
 	        this.title = 'HelpText App!!!';
+	        this.footer = 'Info:';
+	        this.message = '';
 	    }
-	    AppComponent.prototype.handleDownload = function () {
-	        console.log("You pressed the download button!!!");
-	    };
 	    AppComponent = __decorate([
 	        core_1.Component({
 	            selector: 'app-root',
 	            templateUrl: './app/app.component.html',
+	            styleUrls: ['./app/app.component.css']
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], AppComponent);
@@ -30667,7 +30667,7 @@ webpackJsonp([1,2],[
 	    FileDropComponent = __decorate([
 	        core_1.Component({
 	            selector: "file-drop",
-	            template: "\n    <div\n      (dragover)=\"false\"\n      (dragend)=\"false\"\n      (drop)=\"handleDrop($event)\"\n      style=\"height: 300px; border: 5px dotted #ccc;\">\n      <p style=\"margin: 10px; text-align: center\">\n        <strong>Drop Your Helptext Excel Here</strong>\n      </p>\n    </div>\n    "
+	            template: "\n    <div\n      (dragover)=\"false\"\n      (dragend)=\"false\"\n      (drop)=\"handleDrop($event)\"\n      style=\"height: 500px; border: 5px dotted #ccc;border-radius:10px\">\n      <p style=\"margin: 10px; text-align: center\">\n        <strong>Drop Your Helptext Excel Here</strong>\n      </p>\n    </div>\n    "
 	        }), 
 	        __metadata('design:paramtypes', [])
 	    ], FileDropComponent);

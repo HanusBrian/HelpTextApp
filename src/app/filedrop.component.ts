@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
       (dragover)="false"
       (dragend)="false"
       (drop)="handleDrop($event)"
-      style="height: 300px; border: 5px dotted #ccc;">
+      style="height: 500px; border: 5px dotted #ccc;border-radius:10px">
       <p style="margin: 10px; text-align: center">
         <strong>Drop Your Helptext Excel Here</strong>
       </p>

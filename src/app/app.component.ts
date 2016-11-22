@@ -4,12 +4,10 @@ import { FileDropComponent } from './filedrop.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app/app.component.html',
-  // styleUrls: ['./app.component.css']
+  styleUrls: ['./app/app.component.css']
 })
 export class AppComponent {
   title = 'HelpText App!!!';
-
-  handleDownload() {
-    console.log("You pressed the download button!!!");
-  }
+  footer = 'Info:';
+  message = '';
 }

@@ -2,14 +2,11 @@
 	<h1 style="display:inline">
 		{{title}}
 	</h1>
-	<div style="padding:10px;
-      color:black;
-      background-color:cyan;
-      display:inline;
-      border-radius:3px;
-      border: 1px solid grey;
-      float:right" 
+	<div id="download-button"
       onclick="ipcRenderer.send('downloadTemplate')">
 		Download Template</div>
 </div>
 <file-drop></file-drop>
+<div id="footer">
+  <p><strong>{{footer}}</strong>{{message}}</p>
+</div>
