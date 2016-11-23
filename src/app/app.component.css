@@ -5,7 +5,14 @@
     display:inline;
     border-radius:3px;
     border: 1px solid grey;
-    float:right;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+#download-button:hover {
+    cursor: pointer;
+    border: 1px solid #FCB040;
 }
 
 #footer {

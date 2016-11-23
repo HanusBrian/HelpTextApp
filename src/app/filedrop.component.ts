@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
     selector: "file-drop",
     template: `
@@ -17,13 +18,13 @@ import { Component } from '@angular/core';
 
 export class FileDropComponent {
 
-    constructor() {}
+    constructor() { }
 
     handleDrop(e) {
         var files: File = e.dataTransfer.files;
         Object.keys(files).forEach((key) => {
             console.log(files[key]);
+            // ipcRenderer.send('run-script', files);
         });
-        return false;
     }
 }
