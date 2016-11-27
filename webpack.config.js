@@ -14,7 +14,7 @@ module.exports = {
       '@angular/router',
       '@angular/http'
     ],
-	'app': './src/main'
+	  // 'app': './src/main'
   },
  
   output: {

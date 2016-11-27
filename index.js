@@ -13,12 +13,23 @@ app.on('ready', () => {
     var mainWindow = new BrowerWindow({
         width: 900,
         height: 700,
-        resizable: false
+        // webPreferences: {
+        //      nodeIntegration: false,
+        //     preload: __dirname + '/preload.js'
+        // }
+        // resizable: false
     })
 
     mainWindow.loadURL('file://' + __dirname + '/src/index.html');
 
     // running paint from cmd to test 
-    (function(){console.log("running paint");
-    exec('"C:/Windows/System32/mspaint.exe"')})()
+    ipcMain.on('file-drop', (event, path)=>{
+        if(path){
+            console.log("File info: " + path);
+        }else{
+            console.log("no files found");
+        }
+        console.log("running paint off file drop!!!");
+        exec('"C:/Windows/System32/mspaint.exe"');
+    })
 });

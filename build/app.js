@@ -30662,6 +30662,7 @@ webpackJsonp([1,2],[
 	        Object.keys(files).forEach(function (key) {
 	            console.log(files[key]);
 	        });
+	        return false;
 	    };
 	    FileDropComponent = __decorate([
 	        core_1.Component({

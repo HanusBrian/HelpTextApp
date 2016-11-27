@@ -1,20 +1,59 @@
 <!doctype html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <title>Testapp</title>
-  <base href="./">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<meta charset="utf-8">
+	<title>Testapp</title>
+	<base href="./">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+
 <body>
-  <app-root><p style="align:center">HelpText App Loading...</p></app-root>
+	<app-root>
+		<p style="align:center">HelpText App Loading...</p>
+	</app-root>
+	<div ondragover="handleDragover()" 
+		ondragleave="handleDragend()" 
+		ondrop="handleDrop(event)"
+		style="height: 500px; border: 5px dotted #ccc;border-radius:10px">
+		<p style="margin: 10px; text-align: center">
+			<strong>Drop Your Helptext Excel Here</strong>
+		</p>
+	</div>
 </body>
+
 <script src="../build/common.js"></script>
 <script src="../build/angular2.js"></script>
 <script src="../build/app.js"></script>
 <script type="text/javascript">
   var electron = require("electron");
+  var ipc = electron.ipcRenderer;
   var shell = electron.shell;
+
+  window.addEventListener("dragover",function(e){
+  	e = e || event;
+  	e.preventDefault();
+	},false);
+  window.addEventListener("drop",function(e){
+    e = e || event;
+    e.preventDefault();
+  },false);
+
+  function handleDrop(e) {
+	  var files = e.target.files || (e.dataTransfer && e.dataTransfer.files);
+	  if(files) {
+		  console.log(files[0].path);
+		ipc.send('file-drop', files[0].path);
+	  }
+	  return false;
+  }
+  function handleDragover(e){
+	  return false;
+  }
+  function handleDragend(e){ 
+	  return false;
+  }
 </script>
+
 </html>

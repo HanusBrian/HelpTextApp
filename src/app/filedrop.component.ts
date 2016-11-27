@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+// var electron = require('electron');
+// import { electron } from 'electron';
 
 @Component({
     selector: "file-drop",
@@ -21,10 +22,11 @@ export class FileDropComponent {
     constructor() { }
 
     handleDrop(e) {
+        // console.log("handleDrop component function");
         var files: File = e.dataTransfer.files;
         Object.keys(files).forEach((key) => {
-            console.log(files[key]);
-            // ipcRenderer.send('run-script', files);
+            console.log(files[key].name);
         });
+        return false;
     }
 }
