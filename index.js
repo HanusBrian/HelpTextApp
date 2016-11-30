@@ -8,6 +8,7 @@ var ipcMain = electron.ipcMain;
 var remote = electron.remote;
 var dialog = electron.dialog;
 var exec = require('child_process').exec;
+var XLS = require('xlsjs');
 
 app.on('ready', () => {
     var mainWindow = new BrowerWindow({
@@ -26,10 +27,32 @@ app.on('ready', () => {
     ipcMain.on('file-drop', (event, path)=>{
         if(path){
             console.log("File info: " + path);
+            parseFile(path);
         }else{
             console.log("no files found");
         }
-        console.log("running paint off file drop!!!");
-        exec('"C:/Windows/System32/mspaint.exe"');
-    })
+        // console.log("running paint off file drop!!!");
+        // exec('"C:/Windows/System32/mspaint.exe"');
+    });
+
+    function parseFile(file) {
+        var workbook = XLS.readFile(file, {type: "binary"});
+        
+        var dataArr = XLS.utils.sheet_to_row_object_array(workbook.Sheets['Sheet1']);
+
+        for(var i = 0; i < dataArr.length; i++) {
+            console.log(dataArr[i]);
+        }
+        fs.writeFile('src/app/helptextData.ts', 
+            'export const HelptextData =\n' + JSON.stringify(dataArr, null, 4), 
+            'utf-8', 
+            (err) => {
+                if(err) console.log(err.message);
+                else {
+                    console.log('File successfully written');
+                    ipcMain.send('file-done');
+                }
+            }
+        );
+    }
 });

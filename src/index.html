@@ -28,7 +28,7 @@
 <script src="../build/app.js"></script>
 <script type="text/javascript">
   var electron = require("electron");
-  var ipc = electron.ipcRenderer;
+  var ipcRenderer = electron.ipcRenderer;
   var shell = electron.shell;
 
   window.addEventListener("dragover",function(e){
@@ -44,7 +44,7 @@
 	  var files = e.target.files || (e.dataTransfer && e.dataTransfer.files);
 	  if(files) {
 		  console.log(files[0].path);
-		ipc.send('file-drop', files[0].path);
+		ipcRenderer.send('file-drop', files[0].path);
 	  }
 	  return false;
   }
@@ -54,6 +54,10 @@
   function handleDragend(e){ 
 	  return false;
   }
+
+	ipcRenderer.on('file-done', (event) => {
+		console.log("I see that file is done!!!");
+	})
 </script>
 
 </html>
