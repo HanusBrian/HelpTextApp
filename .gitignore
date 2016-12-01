@@ -3,7 +3,7 @@
 # compiled output
 /dist
 /tmp
-/build
+build
 
 # dependencies
 /node_modules
@@ -25,10 +25,6 @@
 npm-debug.log
 testem.log
 /typings
-
-# e2e
-/e2e/*.js
-/e2e/*.map
 
 #System Files
 .DS_Store

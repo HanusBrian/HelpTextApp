@@ -27,7 +27,7 @@ app.on('ready', () => {
     ipcMain.on('file-drop', (event, path)=>{
         if(path){
             console.log("File info: " + path);
-            parseFile(path);
+            parseFile(path, event);
         }else{
             console.log("no files found");
         }
@@ -35,7 +35,7 @@ app.on('ready', () => {
         // exec('"C:/Windows/System32/mspaint.exe"');
     });
 
-    function parseFile(file) {
+    function parseFile(file, event) {
         var workbook = XLS.readFile(file, {type: "binary"});
         
         var dataArr = XLS.utils.sheet_to_row_object_array(workbook.Sheets['Sheet1']);
@@ -50,7 +50,7 @@ app.on('ready', () => {
                 if(err) console.log(err.message);
                 else {
                     console.log('File successfully written');
-                    ipcMain.send('file-done');
+                    event.sender.send('file-done');
                 }
             }
         );
